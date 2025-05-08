@@ -25,7 +25,6 @@ export class WhyCoverGo {
 
     // Calling the data set from the helper file
     const loadKeyValueCsv = new LoadKeyValueCsv();
-   
 
     await page
       .locator("#main-nav")
@@ -33,7 +32,6 @@ export class WhyCoverGo {
       .click();
     // Await the result from readCSV if it returns a promise
     const data = await loadKeyValueCsv.readCSV(csvFilePath);
-
 
     // Loop through the parsed CSV data and use it in the test
     for (const row of data) {
@@ -43,8 +41,8 @@ export class WhyCoverGo {
       await expect(page.getByRole("heading", { name: header })).toBeVisible();
       await expect(page.locator("body")).toContainText(header);
       await expect(page.locator("body")).toContainText(description);
-    //   console.log("CSV header:", header);
-    //   console.log("CSV header:", description);
+      //   console.log("CSV header:", header);
+      //   console.log("CSV header:", description);
     }
   }
 }

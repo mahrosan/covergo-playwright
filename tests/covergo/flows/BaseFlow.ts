@@ -2,6 +2,7 @@ import { Page } from "@playwright/test";
 import { RoleCredentials } from "../../config/baseConfig";
 import { expect } from "@playwright/test";
 import { Helper } from "../../shared/helper";
+import data from "../../data/homePageAssertions.json";
 
 export class BaseFlow {
   constructor(
@@ -56,7 +57,7 @@ export class BaseFlow {
           "We empower insurance companies like yours to build products faster, enable digital distribution, and streamline policy admin and claims in the most flexible, scalable and cost-effective way - powered by our AI-driven, no-code platform.",
         ],
       },
-      // Additional assertions as per your request
+
       {
         locator: "body",
         texts: [
@@ -77,10 +78,6 @@ export class BaseFlow {
       // This is kept on shared/utility to be used by other tests/flow as well
 
       await helper.assertTextAndVisibility(page, locator, texts);
-      // Logged into the console to verify the asserted items
-      // should be removed on the final version.
-      // This is just used to verify the asserted lists in the report as well as the console itself
-      // console.log(texts);
     }
   }
 
@@ -228,5 +225,25 @@ export class BaseFlow {
     // await expect(page.getByText("Failed to validate Captcha.")).toBeVisible();
 
     // await page.pause();
+  }
+
+  async verifyLocalizedContent(lang: "en" | "jp") {
+    const page = this.page;
+    const content = data[lang];
+
+    // Validate nav items
+    for (const item of content.navItems) {
+      const navItem = page.locator(`#main-nav >> text=${item}`);
+      await expect(navItem).toBeVisible();
+      await expect(navItem).toContainText(item);
+    }
+
+    // Validate content sections
+    for (const { locator, texts } of content.assertions) {
+      for (const text of texts) {
+        await expect(page.locator(locator)).toContainText(text);
+        // console.log(text);
+      }
+    }
   }
 }

@@ -1,0 +1,66 @@
+{
+  "en": {
+    "navItems": [
+      "Why CoverGo",
+      "Platform",
+      "Use cases",
+      "Who we help",
+      "Resources",
+      "Company"
+    ],
+    "assertions": [
+      {
+        "locator": "#ancr-2050",
+        "texts": [
+          "CoverGo launches next-gen AI-powered health claims management platform",
+          "Learn more"
+        ]
+      },
+      { "locator": "#main-nav", "texts": ["Talk with us"] },
+      {
+        "locator": "#hero",
+        "texts": [
+          "We empower insurance companies like yours to build products faster, enable digital distribution, and streamline policy admin and claims in the most flexible, scalable and cost-effective way - powered by our AI-driven, no-code platform.",
+          "Book a demo"
+        ]
+      },
+      {
+        "locator": "body",
+        "texts": ["Trusted by leading insurance companies globally"]
+      },
+      { "locator": "h1", "texts": ["Up your insurance game."] }
+    ]
+  },
+  "jp": {
+    "navItems": [
+      "CoverGoが選ばれる理由",
+      "プラットフォーム",
+      "プロダクト",
+      "サポート対象",
+      "資料",
+      "会社概要"
+    ],
+    "assertions": [
+      {
+        "locator": "#ancr-2050",
+        "texts": [
+          "CoverGo、AIを活用した次世代健康保険請求管理プラットフォームを発表",
+          "詳しくみる"
+        ]
+      },
+      { "locator": "#main-nav", "texts": ["お問い合わせ"] },
+      {
+        "locator": "#hero",
+        "texts": [
+          "医療・生命・損害保険向けの次世代型プラットフォーム。販売支援、契約管理、保険金請求を一元化。",
+          "お問い合わせ"
+        ]
+      },
+      {
+        "locator": "body",
+        "texts": ["世界の大手保険会社からの信頼を得ています"]
+      },
+      { "locator": "h1", "texts": ["保険ビジネスを次のステージへ"] }
+    ]
+  }
+}

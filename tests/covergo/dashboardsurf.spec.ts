@@ -43,4 +43,22 @@ test.describe("CoverGo Base Flow", () => {
     // Also reuses the navigation functionality to contact us page
     await baseFlow.fillInTheContactUsForm();
   });
+
+  test("Verify EN and JP homepage content", async ({ page }) => {
+    // 1. Grab the Base config from environment variables
+    // For now just the URL will be a used, The username and password is kept to just shows how it can be extracted.
+    const baseConfig = getCoverGoConfig("baseUser");
+
+    // 2. Create the page object with that config
+    const baseFlow = new BaseFlow(page, baseConfig);
+
+    // First check the base localiation part, I.E English
+    await page.goto(`${baseConfig.baseUrl}`);
+    await baseFlow.verifyLocalizedContent("en");
+    
+    // Then Switch to Japanese
+    await page.getByRole("link", { name: "English" }).click();
+    await page.getByRole("link", { name: "日本語" }).click();
+    await baseFlow.verifyLocalizedContent("jp");
+  });
 });

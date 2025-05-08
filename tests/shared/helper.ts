@@ -24,4 +24,12 @@ export class Helper {
       }
     }
   }
+
+  async verifyImage(heroImage) {
+    // Check if the image has fully loaded
+    const isImageLoaded = await heroImage.evaluate((img: HTMLImageElement) => {
+      return img.complete && img.naturalWidth > 0;
+    });
+    return isImageLoaded;
+  }
 }
