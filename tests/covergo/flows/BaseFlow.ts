@@ -161,7 +161,10 @@ export class BaseFlow {
     ).toContainText("Email");
 
     await page.getByRole("button", { name: "Submit" }).click();
-    await page.screenshot({ path: 'screenshots/assertion-failed.png', fullPage: true });
+    await page.screenshot({
+      path: "screenshots/assertion-failed.png",
+      fullPage: true,
+    });
     // Wrongly formated email
     await page.getByRole("textbox", { name: "Email*" }).click();
     await page.getByRole("textbox", { name: "Email*" }).fill("kanai.phinehas");

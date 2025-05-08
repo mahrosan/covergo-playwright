@@ -43,19 +43,18 @@ Copy the `.env.example` file to `.env` and update the environment variables:
 cp .env.example .env
 ```
 
-
 ### Run tests in headed mode
 
-```bash
+````bash
 npx playwright test tests\covergo\dashboardsurf.spec.ts --project=chromium --headed
 
 ### For Parallel testing
-npx playwright test tests\covergo\dashboardsurf.spec.ts --headed 
+npx playwright test tests\covergo\dashboardsurf.spec.ts --headed
 ### View the HTML report
 
 ```bash
 npx playwright show-report
-```
+````
 
 ## Project Structure
 

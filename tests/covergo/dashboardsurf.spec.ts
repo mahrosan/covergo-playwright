@@ -29,7 +29,9 @@ test.describe("CoverGo Base Flow", () => {
     await baseFlow.goToTalkWithUs();
   });
 
-  test("should fill in the contact us form and assert the validations", async ({ page }) => {
+  test("should fill in the contact us form and assert the validations", async ({
+    page,
+  }) => {
     // 1. Grab the Base config from environment variables
     // For now just the URL will be a used, The username and password is kept to just shows how it can be extracted.
     const baseConfig = getCoverGoConfig("baseUser");
@@ -41,6 +43,4 @@ test.describe("CoverGo Base Flow", () => {
     // Also reuses the navigation functionality to contact us page
     await baseFlow.fillInTheContactUsForm();
   });
-
-  
 });
