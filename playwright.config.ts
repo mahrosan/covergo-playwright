@@ -2,6 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests", // Directory where your tests will reside
+  retries: 1, //  Retry failed tests once
   testMatch: "**/*.spec.ts", // Pattern for test files
   fullyParallel: true, // Run tests in parallel
   workers: 4, // Number of parallel workers, adjust as needed
