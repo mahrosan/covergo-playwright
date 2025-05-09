@@ -76,6 +76,7 @@ export class BaseFlow {
       // Helper function to assert visibility and text for any locator
       // For this scenario we will be using it just for BaseFlow test
       // This is kept on shared/utility to be used by other tests/flow as well
+      // Since I was on a tight deadline, I forgot to use the helper on most of the assertion that I created after this module T.T
 
       await helper.assertTextAndVisibility(page, locator, texts);
     }
@@ -216,6 +217,11 @@ export class BaseFlow {
     ).toContainText(
       "CoverGo needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at anytime. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, check out our Privacy Policy.",
     );
+
+    // I have blocked the submit part since I did not wanted to trigger captcha message and also send in test data to the prod (if it was possible)
+    // Unblocking the code section will Click the submit button and verify the captcha message
+    // Since the web page does have captcha, it should had been consulted with the dev team if we were to test this module
+
     // await page.getByRole("button", { name: "Submit" }).click();
     // await expect(
     //   page

@@ -6,7 +6,7 @@ test.describe("Career Page Flow", () => {
   test("Should verify the error handling on career page", async ({ page }) => {
     const baseConfig = getCoverGoConfig("baseUser");
 
-    const careerFlow = new CareerFlow(page,baseConfig);
+    const careerFlow = new CareerFlow(page, baseConfig);
     await careerFlow.assertNoJobsFound();
   });
 

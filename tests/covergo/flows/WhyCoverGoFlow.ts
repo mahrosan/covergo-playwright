@@ -4,7 +4,7 @@ import { expect } from "@playwright/test";
 import { LoadKeyValueCsv } from "../../shared/loadKeyValueCsv";
 import path from "path";
 
-export class WhyCoverGo {
+export class WhyCoverGoFlow {
   constructor(
     private page: Page,
     private config: { baseUrl: string } & RoleCredentials,
@@ -41,8 +41,6 @@ export class WhyCoverGo {
       await expect(page.getByRole("heading", { name: header })).toBeVisible();
       await expect(page.locator("body")).toContainText(header);
       await expect(page.locator("body")).toContainText(description);
-      //   console.log("CSV header:", header);
-      //   console.log("CSV header:", description);
     }
   }
 }

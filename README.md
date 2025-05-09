@@ -37,7 +37,6 @@ Copy the `.env.example` file to `.env` and update the environment variables:
 cp .env.example .env
 ```
 
-
 ## Running Tests
 
 ### Run all tests
@@ -54,15 +53,15 @@ npm run test:headed
 
 ## For Specific test and selected browser
 
-````bash
+```bash
 npx playwright test tests\covergo\dashboardsurf.spec.ts --project=chromium --headed
-````
+```
 
 ## View the HTML report
+
 ```bash
 npm run report
 ```
-
 
 ## Project Structure
 

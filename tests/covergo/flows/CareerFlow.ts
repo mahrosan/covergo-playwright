@@ -74,7 +74,6 @@ export class CareerFlow {
     );
     await page.getByText("Nepal, Bagmati Province", { exact: true }).click();
 
-    // await page.pause();
 
     await expect(
       page.getByRole("link", { name: "Senior Software QA Engineer (" }),

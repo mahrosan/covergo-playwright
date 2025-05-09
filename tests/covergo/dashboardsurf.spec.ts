@@ -55,7 +55,7 @@ test.describe("CoverGo Base Flow", () => {
     // First check the base localiation part, I.E English
     await page.goto(`${baseConfig.baseUrl}`);
     await baseFlow.verifyLocalizedContent("en");
-    
+
     // Then Switch to Japanese
     await page.getByRole("link", { name: "English" }).click();
     await page.getByRole("link", { name: "日本語" }).click();
