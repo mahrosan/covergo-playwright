@@ -66,14 +66,22 @@ npm run report
 ## Project Structure
 
 ```
-covergo-playwright/
-├── tests/                # All test files
-│   └── covergo # Customer-specific tests and configurations
-│       │── flows     # Named the pages as flows
-│       │── *.spec.ts # Test specs
-├── playwright.config.ts  # Playwright configuration
-├── .env                  # Environment variables (not committed to git)
-├── .env.example          # Example environment variables
-├── package.json          # Project dependencies and scripts
-└── README.md             # Project documentation
+covergo-playwright/                   # Root directory
+├── tests/                            # All test files
+│   └── covergo/                      # Customer-specific tests and configurations (Just CoverGo for now)
+│       ├── flows/                    # Contains flow-related test cases
+│       │   ├── BaseFlow.ts           # Example of a flow (can be renamed accordingly)
+│       │   ├── CareerFlow.ts         # Another example of a flow
+│       │   ├── ClientsFlow.ts        # Example of a customer-specific flow
+│       │   └── WhyCoverGoFlow.ts     # Additional flow if needed
+│       ├── *.spec.ts                 # Test specifications files
+│       ├── clientExtraction.spec.ts  # Example test file for client extraction
+│       ├── career.spec.ts            # Example test file for career-related tests
+│       ├── dashboard.spec.ts         # Example for dashboard test cases
+│       └── whycovergo.spec.ts        # Example for why covergo test cases
+├── playwright.config.ts              # Playwright configuration
+├── .env                              # Environment variables (not committed to git)
+├── .env.example                      # Example environment variables
+├── package.json                      # Project dependencies and scripts
+└── README.md                         # Project documentation
 ```
